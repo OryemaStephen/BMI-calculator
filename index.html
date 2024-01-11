@@ -9,16 +9,19 @@
 </head>
 <body>
     <div class="container">
-        <div class="bmi-calculator">
+        <div class="bmi-calculator ">
             <h1>BMI Calculator</h1>
-            <form >
+            <form  id="bmi-input-data">
+                <label for="age">Name :
+                    <input type="text" id="name" required/>
+                </label>
                 <label for="age">Age :
                     <input type="number" id="age" min="2" max="120" required/>
                 </label>
                 <fieldset>
                     <legend>Gender</legend>
-                    <input type="radio" id="male" value="male" name="gender" /><label for="male">Male</label><br />
-                    <input type="radio" id="female" value="female" name="gender" /><label for="female">Female</label>
+                    <input type="radio" id="male" value="male" name="male" /><label for="male">Male</label><br />
+                    <input type="radio" id="female" value="female" name="female" /><label for="female">Female</label>
                 </fieldset>
                 <label for="height">Height :
                     <input type="number" id="height" required><span>cm</span>
@@ -26,12 +29,13 @@
                 <label for="weight">Weight :
                     <input type="number" id="weight" required><span>Kg</span>
                 </label>
-                <button type="submit"  onclick="calculateBMI()">Calculate</button>
-                <input type="reset" value="Clear">
+                <button type="button"  onclick="calculateBMI()">Calculate</button>
+                <input type="reset" value="Clear" >
             </form>            
         </div>
-        <div class="bmi-result">
+        <div class="bmi-result" id="bmi-result">
             <h1>BMI Results</h1>
+            <p id="name-display"></p>
             <p id="result"></p>
             <p id="bmi-category"></p>
         </div>

@@ -1,23 +1,24 @@
 
 function calculateBMI(){
     //Access user input
-    let age=document.getElementById("age").value;
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
     let height = document.getElementById("height").value;
     let weight = document.getElementById("weight").value;
     
-
     //Calculate BMI
     let heightInM = (height/100);
     let bmi = Math.round(weight/(Math.pow(heightInM,2))*10)/10;
 
-    //BMI Class
-    let bmiClass =document.getElementById("bmi-category");    
-
-    
-    //Display BMI
+    const nameDisplay = document.getElementById("name-display");
+    //Display BMI and BMI Class
     let para = document.getElementById("result");
+    let bmiClass =document.getElementById("bmi-category");
     
-    if(age===""){
+    
+    if(name===""){
+        return para.innerText = "Please enter your name!"; 
+    }else if(age===""){
         return para.innerText = "Please enter your age in years!"; 
     } else if(height===""){
         return para.innerText = "Please enter height in cm!";
@@ -43,8 +44,9 @@ function calculateBMI(){
         }else{
             bmiClass.innerText="Please calculate your BMI."
         };
+        nameDisplay.innerText = "Welcome, " + name +" ."
         return para.innerText="Your BMI is : " + bmi + " Kg/m2";
     }
-    
-    
 }
+
+
