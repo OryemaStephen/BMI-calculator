@@ -1,24 +1,50 @@
 
 function calculateBMI(){
     //Access user input
+    let age=document.getElementById("age").value;
     let height = document.getElementById("height").value;
     let weight = document.getElementById("weight").value;
+    
 
     //Calculate BMI
     let heightInM = (height/100);
-    let bmi = weight/(Math.pow(heightInM,2));
+    let bmi = Math.round(weight/(Math.pow(heightInM,2))*10)/10;
 
+    //BMI Class
+    let bmiClass =document.getElementById("bmi-category");    
+
+    
     //Display BMI
     let para = document.getElementById("result");
-
-    para.innerText=Math.round(bmi*10)/10;
-
-    if(height===""){
-        para.innerText = "Please enter your height in cm"; 
-    } else if(weight===""){
-        para.innerText = "Please enter weight in Kg";
+    
+    if(age===""){
+        return para.innerText = "Please enter your age in years!"; 
+    } else if(height===""){
+        return para.innerText = "Please enter height in cm!";
+    }else if(weight===""){
+        return para.innerText = "Please enter weight in Kg";
     }else{
-        return para.innerText="Your BMI is : " + Math.round(bmi*10)/10;
+        if(bmi<=16){
+            bmiClass.innerText="You are Severely Thinness.";
+        } else if(bmi<=17){
+            bmiClass.innerText="You are Moderately Thinness.";
+        }else if(bmi<=18.5){
+            bmiClass.innerText="You are Mildly Thinness.";
+        }else if(bmi<=25){
+            bmiClass.innerText="You are Normal.";
+        }else if(bmi<=30){
+            bmiClass.innerText="You are Overweight.";
+        }else if(bmi<=35){
+            bmiClass.innerText="You are  Obese Class I.";
+        }else if(bmi<=40){
+            bmiClass.innerText="You are Obese Class II.";
+        }else if(bmi>40){
+            bmiClass.innerText="You are Obese Class III.";
+        }else{
+            bmiClass.innerText="Please calculate your BMI."
+        };
+        return para.innerText="Your BMI is : " + bmi + " Kg/m2";
     }
-
+    
+    
 }

@@ -11,13 +11,13 @@
     <div class="container">
         <div class="bmi-calculator">
             <h1>BMI Calculator</h1>
-            <form action="#">
+            <form >
                 <label for="age">Age :
                     <input type="number" id="age" min="2" max="120" required/>
                 </label>
                 <fieldset>
                     <legend>Gender</legend>
-                    <input type="radio" id="male" value="male" name="gender"/><label for="male">Male</label><br />
+                    <input type="radio" id="male" value="male" name="gender" /><label for="male">Male</label><br />
                     <input type="radio" id="female" value="female" name="gender" /><label for="female">Female</label>
                 </fieldset>
                 <label for="height">Height :
@@ -26,15 +26,18 @@
                 <label for="weight">Weight :
                     <input type="number" id="weight" required><span>Kg</span>
                 </label>
-                <button type="button"  onclick="calculateBMI()">Calculate</button>
+                <button type="submit"  onclick="calculateBMI()">Calculate</button>
                 <input type="reset" value="Clear">
             </form>            
         </div>
         <div class="bmi-result">
             <h1>BMI Results</h1>
             <p id="result"></p>
+            <p id="bmi-category"></p>
         </div>
     </div>  
-    <script src="app.js"></script>  
+    <script src="app.js">
+        
+    </script>  
 </body>
 </html>
